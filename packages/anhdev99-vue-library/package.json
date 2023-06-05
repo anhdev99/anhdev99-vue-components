@@ -1,0 +1,26 @@
+{
+  "name": "anhdev99-vue-library",
+  "version": "0.0.1",
+  "description": "A component library for Vue.js.",
+  "author": {
+    "name": "anhdev99",
+    "email": "anhdev99@gmail.com",
+    "github": "anhdev99"
+  },
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/anhdev99-vue-library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhdev99/anhdev99-vue-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anhdev99/anhdev99-vue-library/issues"
+  },
+  "module": "index.js",
+  "main": "cjs/index.js",
+  "unpkg": "umd/index.min.js",
+  "jsdelivr": "umd/index.min.js",
+  "peerDependencies": {
+    "vue": ">=2.6.0"
+  }
+}
