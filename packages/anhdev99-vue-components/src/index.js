@@ -5,13 +5,17 @@
 // YOU SHOULD NEVER UPDATE THIS FILE DIRECTLY
 
 import BaseButton from './components/BaseButton/BaseButton.vue'
+import BaseSideBar from './components/BaseSideBar/BaseSideBar.vue'
+import BaseSideNav from './components/BaseSideNav/BaseSideNav.vue'
 
 // Export components individually
-export { BaseButton }
+export { BaseButton, BaseSideBar, BaseSideNav }
 
 // What should happen if the user installs the library as a plugin
 function install(Vue) {
   Vue.component('BaseButton', BaseButton)
+  Vue.component('BaseSideBar', BaseSideBar)
+  Vue.component('BaseSideNav', BaseSideNav)
 }
 
 // Export the library as a plugin
