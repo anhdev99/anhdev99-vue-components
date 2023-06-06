@@ -1,5 +1,5 @@
 {
-  "name": "anhdev99-vue-library",
+  "name": "anhdev99-vue-components",
   "version": "0.0.1",
   "description": "A component library for Vue.js.",
   "author": {
@@ -8,13 +8,13 @@
     "github": "anhdev99"
   },
   "license": "MIT",
-  "homepage": "https://www.npmjs.com/package/anhdev99-vue-library",
+  "homepage": "https://www.npmjs.com/package/anhdev99-vue-components",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anhdev99/anhdev99-vue-library.git"
+    "url": "git+https://github.com/anhdev99/anhdev99-vue-components.git"
   },
   "bugs": {
-    "url": "https://github.com/anhdev99/anhdev99-vue-library/issues"
+    "url": "https://github.com/anhdev99/anhdev99-vue-components/issues"
   },
   "module": "index.js",
   "main": "cjs/index.js",

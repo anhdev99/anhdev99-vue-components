@@ -1,7 +1,7 @@
 {
-  "name": "anhdev99-vue-library",
+  "name": "anhdev99-vue-components",
   "private": false,
-  "main": "packages/anhdev99-vue-library/umd/index.js",
+  "main": "packages/anhdev99-vue-components/umd/index.js",
   "scripts": {
     "dev": "node build-utils/update-index-file.js && vue-cli-service serve --open",
     "build": "node build-utils/build-lib.js",
@@ -270,5 +270,5 @@
       ]
     }
   },
-  "version": "0.0.6"
+  "version": "0.0.7"
 }
