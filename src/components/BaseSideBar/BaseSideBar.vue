@@ -47,40 +47,40 @@ export default {
       handler(newVal, oldVal) {
         if (newVal !== oldVal) {
           switch (newVal) {
-          case 'dark':
-            document.body.setAttribute('data-sidebar', 'dark')
-            document.body.removeAttribute('data-topbar')
-            document.body.removeAttribute('data-sidebar-size')
-            document.body.removeAttribute('data-keep-enlarged')
-            document.body.classList.remove('vertical-collpsed')
-            break
-          case 'light':
-            document.body.setAttribute('data-topbar', 'dark')
-            document.body.removeAttribute('data-sidebar')
-            document.body.removeAttribute('data-sidebar-size')
-            document.body.classList.remove('vertical-collpsed')
-            break
-          case 'compact':
-            document.body.setAttribute('data-sidebar-size', 'small')
-            document.body.setAttribute('data-sidebar', 'dark')
-            document.body.classList.remove('vertical-collpsed')
-            document.body.removeAttribute('data-topbar', 'dark')
-            break
-          case 'icon':
-            document.body.setAttribute('data-keep-enlarged', 'true')
-            document.body.classList.add('vertical-collpsed')
-            document.body.setAttribute('data-sidebar', 'dark')
-            document.body.removeAttribute('data-topbar', 'dark')
-            break
-          case 'colored':
-            document.body.setAttribute('data-sidebar', 'colored')
-            document.body.removeAttribute('data-keep-enlarged')
-            document.body.classList.remove('vertical-collpsed')
-            document.body.removeAttribute('data-sidebar-size')
-            break
-          default:
-            document.body.setAttribute('data-sidebar', 'dark')
-            break
+            case 'dark':
+              document.body.setAttribute('data-sidebar', 'dark')
+              document.body.removeAttribute('data-topbar')
+              document.body.removeAttribute('data-sidebar-size')
+              document.body.removeAttribute('data-keep-enlarged')
+              document.body.classList.remove('vertical-collpsed')
+              break
+            case 'light':
+              document.body.setAttribute('data-topbar', 'dark')
+              document.body.removeAttribute('data-sidebar')
+              document.body.removeAttribute('data-sidebar-size')
+              document.body.classList.remove('vertical-collpsed')
+              break
+            case 'compact':
+              document.body.setAttribute('data-sidebar-size', 'small')
+              document.body.setAttribute('data-sidebar', 'dark')
+              document.body.classList.remove('vertical-collpsed')
+              document.body.removeAttribute('data-topbar', 'dark')
+              break
+            case 'icon':
+              document.body.setAttribute('data-keep-enlarged', 'true')
+              document.body.classList.add('vertical-collpsed')
+              document.body.setAttribute('data-sidebar', 'dark')
+              document.body.removeAttribute('data-topbar', 'dark')
+              break
+            case 'colored':
+              document.body.setAttribute('data-sidebar', 'colored')
+              document.body.removeAttribute('data-keep-enlarged')
+              document.body.classList.remove('vertical-collpsed')
+              document.body.removeAttribute('data-sidebar-size')
+              break
+            default:
+              document.body.setAttribute('data-sidebar', 'dark')
+              break
           }
         }
       }
@@ -90,23 +90,23 @@ export default {
       handler(newVal, oldVal) {
         if (newVal !== oldVal) {
           switch (newVal) {
-          case 'boxed':
-            document.body.setAttribute('data-layout-size', 'boxed')
-            document.body.removeAttribute('data-layout-scrollable')
-            break
-          case 'fluid':
-            document.body.setAttribute('data-layout-mode', 'fluid')
-            document.body.removeAttribute('data-layout-size')
-            document.body.removeAttribute('data-layout-scrollable')
-            break
-          case 'scrollable':
-            document.body.setAttribute('data-layout-scrollable', 'true')
-            document.body.removeAttribute('data-layout-mode')
-            document.body.removeAttribute('data-layout-size')
-            break
-          default:
-            document.body.setAttribute('data-layout-mode', 'fluid')
-            break
+            case 'boxed':
+              document.body.setAttribute('data-layout-size', 'boxed')
+              document.body.removeAttribute('data-layout-scrollable')
+              break
+            case 'fluid':
+              document.body.setAttribute('data-layout-mode', 'fluid')
+              document.body.removeAttribute('data-layout-size')
+              document.body.removeAttribute('data-layout-scrollable')
+              break
+            case 'scrollable':
+              document.body.setAttribute('data-layout-scrollable', 'true')
+              document.body.removeAttribute('data-layout-mode')
+              document.body.removeAttribute('data-layout-size')
+              break
+            default:
+              document.body.setAttribute('data-layout-mode', 'fluid')
+              break
           }
         }
       }
@@ -143,10 +143,7 @@ export default {
       <BaseSideNav :menu-items="menuItems" />
     </simplebar>
 
-    <simplebar
-      v-else
-      class="h-100"
-    >
+    <simplebar v-else class="h-100">
       <BaseSideNav :menu-items="menuItems" />
     </simplebar>
   </div>

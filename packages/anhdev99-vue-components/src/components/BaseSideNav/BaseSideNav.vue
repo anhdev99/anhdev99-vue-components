@@ -15,7 +15,7 @@ export default {
     return {}
   },
   mounted: function() {
-    if (document.getElementById('side-menu')) new MetisMenu('#side-menu')
+    if (document.getElementById('side-menu')) MetisMenu.attach('#side-menu')
     var links = document.getElementsByClassName('side-nav-link-ref')
     var matchingMenuItem = null
     const paths = []
