@@ -1,5 +1,5 @@
 <script>
-import MetisMenu from 'metismenujs'
+import { MetisMenu } from 'metismenujs'
 
 /**
  * Sidenav component
@@ -8,11 +8,13 @@ export default {
   props: {
     menuItems: {
       type: Array,
-      required: true
+      required: false
     }
   },
   data() {
-    return {}
+    return {
+      menuData: null
+    }
   },
   mounted: function() {
     if (document.getElementById('side-menu')) MetisMenu.attach('#side-menu')
@@ -87,12 +89,24 @@ export default {
 </script>
 
 <template>
-  <!-- ========== Left Sidebar Start ========== -->
-
   <!--- Sidemenu -->
   <div id="sidebar-menu">
     <!-- Left Menu Start -->
     <ul id="side-menu" class="metismenu list-unstyled">
+      <li class="menu-title-primary">
+        <a class="cs-menu-title" href="">
+          <div class="cs-icon-menu">
+            <img
+              alt="nhan-su"
+              height="30"
+              src="/assets/images/icon/icon_qlns.png"
+            />
+          </div>
+          <span class="text-uppercase ms-2 font-weight-bold text-dark"
+            >Quản lý nhân sự</span
+          >
+        </a>
+      </li>
       <template v-for="item in menuItems">
         <li v-if="item.isTitle" :key="item.id" class="menu-title">
           {{ item.label }}
@@ -100,9 +114,9 @@ export default {
         <li v-if="!item.isTitle && !item.isLayout" :key="item.id">
           <a
             v-if="hasItems(item)"
-            href="javascript:void(0);"
-            class="is-parent"
             :class="{ 'has-arrow': !item.badge, 'has-dropdown': item.badge }"
+            class="is-parent"
+            href="javascript:void(0);"
           >
             <i v-if="item.icon" :class="`bx ${item.icon}`" />
             <span>{{ item.label }}</span>
@@ -116,7 +130,7 @@ export default {
           <router-link
             v-if="!hasItems(item)"
             :to="item.link"
-            class="side-nav-link-ref"
+            class="side-nav-link-ref side-nav-link"
           >
             <i v-if="item.icon" :class="`bx ${item.icon}`" />
             <span>{{ item.label }}</span>
@@ -127,21 +141,14 @@ export default {
             >
           </router-link>
 
-          <ul v-if="hasItems(item)" class="sub-menu" aria-expanded="false">
+          <ul v-if="hasItems(item)" aria-expanded="false" class="sub-menu">
             <li v-for="(subitem, index) of item.subItems" :key="index">
               <router-link
                 v-if="!hasItems(subitem)"
                 :to="subitem.link"
                 class="side-nav-link-ref"
               >
-                <span>{{ subitem.label }}</span>
-                <span
-                  v-if="subitem.badge"
-                  :class="
-                    `badge rounded-pill bg-${subitem.badge.variant} float-end`
-                  "
-                  >{{ subitem.badge.text }}</span
-                >
+                {{ subitem.label }}
               </router-link>
               <a
                 v-if="hasItems(subitem)"
@@ -151,12 +158,12 @@ export default {
               >
               <ul
                 v-if="hasItems(subitem)"
-                class="sub-menu mm-collapse"
                 aria-expanded="false"
+                class="sub-menu mm-collapse"
               >
                 <li
-                  v-for="(subSubitem, subIndex) of subitem.subItems"
-                  :key="subIndex"
+                  v-for="(subSubitem, index1) of subitem.subItems"
+                  :key="index1"
                 >
                   <router-link :to="subSubitem.link" class="side-nav-link-ref">
                     {{ subSubitem.label }}
@@ -169,5 +176,4 @@ export default {
       </template>
     </ul>
   </div>
-  <!-- Sidebar -->
 </template>

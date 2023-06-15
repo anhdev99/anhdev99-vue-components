@@ -1,13 +1,13 @@
 <script>
 import simplebar from 'simplebar-vue'
 
-import BaseSideNav from '../BaseSideNav/BaseSideNav.vue'
+import SideNav from '../BaseSideNav/BaseSideNav.vue'
 
 /**
  * Sidebar component
  */
 export default {
-  components: { simplebar, BaseSideNav },
+  components: { simplebar, SideNav },
   props: {
     isCondensed: {
       type: Boolean,
@@ -16,16 +16,16 @@ export default {
     type: {
       type: String,
       required: false,
-      default: '0'
+      default: 'vertical'
     },
     width: {
       type: String,
       required: false,
-      default: '0'
+      default: 'fluid'
     },
     menuItems: {
       type: Array,
-      required: true
+      required: false
     }
   },
   data() {
@@ -51,7 +51,6 @@ export default {
               document.body.setAttribute('data-sidebar', 'dark')
               document.body.removeAttribute('data-topbar')
               document.body.removeAttribute('data-sidebar-size')
-              document.body.removeAttribute('data-keep-enlarged')
               document.body.classList.remove('vertical-collpsed')
               break
             case 'light':
@@ -63,20 +62,19 @@ export default {
             case 'compact':
               document.body.setAttribute('data-sidebar-size', 'small')
               document.body.setAttribute('data-sidebar', 'dark')
+              document.body.setAttribute('data-topbar', 'light')
               document.body.classList.remove('vertical-collpsed')
-              document.body.removeAttribute('data-topbar', 'dark')
+              document.body.removeAttribute('data-keep-enlarged')
               break
             case 'icon':
-              document.body.setAttribute('data-keep-enlarged', 'true')
               document.body.classList.add('vertical-collpsed')
-              document.body.setAttribute('data-sidebar', 'dark')
-              document.body.removeAttribute('data-topbar', 'dark')
+              document.body.setAttribute('data-keep-enlarged', 'true')
+              document.body.removeAttribute('data-sidebar-size')
               break
             case 'colored':
               document.body.setAttribute('data-sidebar', 'colored')
               document.body.removeAttribute('data-keep-enlarged')
               document.body.classList.remove('vertical-collpsed')
-              document.body.removeAttribute('data-sidebar-size')
               break
             default:
               document.body.setAttribute('data-sidebar', 'dark')
@@ -92,17 +90,11 @@ export default {
           switch (newVal) {
             case 'boxed':
               document.body.setAttribute('data-layout-size', 'boxed')
-              document.body.removeAttribute('data-layout-scrollable')
               break
             case 'fluid':
               document.body.setAttribute('data-layout-mode', 'fluid')
               document.body.removeAttribute('data-layout-size')
               document.body.removeAttribute('data-layout-scrollable')
-              break
-            case 'scrollable':
-              document.body.setAttribute('data-layout-scrollable', 'true')
-              document.body.removeAttribute('data-layout-mode')
-              document.body.removeAttribute('data-layout-size')
               break
             default:
               document.body.setAttribute('data-layout-mode', 'fluid')
@@ -111,6 +103,9 @@ export default {
         }
       }
     }
+  },
+  created() {
+    this.iconSidebar()
   },
   methods: {
     onRoutechange() {
@@ -125,6 +120,27 @@ export default {
                 currentPosition + 300
         }
       }, 300)
+    },
+    iconSidebar() {
+      document.body.classList.add('sidebar-enable vertical-collpsed')
+      document.body.setAttribute('data-keep-enlarged', 'true')
+      document.body.removeAttribute('data-sidebar-size', 'small')
+      document.body.removeAttribute('data-layout-size', 'boxed')
+    },
+    showSideBar() {
+      document.body.classList.add('vertical-collpsed')
+    },
+    hideSideBar() {
+      document.body.classList.remove('vertical-collpsed')
+    },
+
+    show() {
+      const classname = document.getElementsByClassName('vertical-collpsed')
+      if (classname && classname.length > 0) {
+        document.body.classList.remove('vertical-collpsed')
+      } else {
+        document.body.classList.add('vertical-collpsed')
+      }
     }
   }
 }
@@ -132,7 +148,12 @@ export default {
 
 <template>
   <!-- ========== Left Sidebar Start ========== -->
-  <div class="vertical-menu">
+  <div
+    class="vertical-menu"
+    @click="show"
+    @mouseleave="showSideBar"
+    @mouseover="hideSideBar"
+  >
     <simplebar
       v-if="!isCondensed"
       id="my-element"
@@ -140,11 +161,11 @@ export default {
       :settings="settings"
       class="h-100"
     >
-      <BaseSideNav :menu-items="menuItems" />
+      <SideNav :menu-items="menuItems" />
     </simplebar>
 
     <simplebar v-else class="h-100">
-      <BaseSideNav :menu-items="menuItems" />
+      <SideNav :menu-items="menuItems" />
     </simplebar>
   </div>
   <!-- Left Sidebar End -->
