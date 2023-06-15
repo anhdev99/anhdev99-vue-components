@@ -1,5 +1,5 @@
 <script>
-import { MetisMenu } from 'metismenujs'
+import MetisMenu from 'metismenujs'
 
 /**
  * Sidenav component
