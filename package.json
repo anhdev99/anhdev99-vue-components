@@ -254,7 +254,6 @@
     ],
     "rules": {
       "string-no-newline": null,
-      "selector-class-pattern": "^[a-z][a-zA-Z]*(-(enter|leave)(-(active|to))?)?$",
       "selector-id-pattern": "^[a-z][a-zA-Z]*$",
       "selector-max-universal": 1,
       "selector-max-type": [
@@ -269,5 +268,5 @@
       ]
     }
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
