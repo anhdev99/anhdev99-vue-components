@@ -2,7 +2,7 @@
 import simplebar from 'simplebar-vue'
 
 import SideNav from '../BaseSideNav/BaseSideNav.vue'
-
+import './sidebar.scss'
 /**
  * Sidebar component
  */

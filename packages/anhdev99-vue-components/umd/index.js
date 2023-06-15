@@ -2695,6 +2695,8 @@ var _simplebarVue = _interopRequireDefault(__webpack_require__("8d3b"));
 
 var _BaseSideNav = _interopRequireDefault(__webpack_require__("9ac2"));
 
+__webpack_require__("5a22");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -3376,6 +3378,21 @@ module.exports = function (key) {
 
 /***/ }),
 
+/***/ "5a22":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("5c07");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("40474476", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "5a4f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3515,6 +3532,21 @@ module.exports = function (argument) {
   if (isObject(argument)) return argument;
   throw $TypeError($String(argument) + ' is not an object');
 };
+
+
+/***/ }),
+
+/***/ "5c07":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".vertical-menu{background:#fff!important}.cs-menu-title{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:start;padding:5px!important}.vertical-menu #sidebar-menu>ul>li.menu-title-primary:hover>a{background:transparent!important}.cs-icon-menu{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:40px;height:40px;padding:.25rem;background-color:#fff!important;border-radius:5px;-webkit-box-shadow:hsla(0,0%,52.5%,.15) 1.95px 1.95px 5.6px,#f5f5f5 -1.95px -1.95px 5.6px;box-shadow:1.95px 1.95px 5.6px hsla(0,0%,52.5%,.15),-1.95px -1.95px 5.6px #f5f5f5}.vertical-collpsed .vertical-menu #sidebar-menu>ul>li.mm-active>a i{color:#162c95!important}.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>a i{color:#fff!important}.vertical-collpsed .vertical-menu #sidebar-menu>ul ul{left:60px!important;width:200px!important;padding:0!important;background-color:#162c95!important}.vertical-collpsed .vertical-menu #sidebar-menu>ul>li:hover>ul a{color:#f0f0f0!important}.vertical-menu #sidebar-menu>ul>li:hover>a{color:#fff!important;background:#162c95!important;border-radius:5px}#sidebar-menu a.is-parent.has-arrow,#sidebar-menu a.is-parent.has-arrow i{color:#2a2a2a!important}#sidebar-menu ul li ul.sub-menu li a{padding:.75rem 1.5rem .75rem 3.5rem!important;border-radius:5px}#sidebar-menu ul li ul.sub-menu li a:hover,.vertical-collpsed #sidebar-menu ul li ul.sub-menu li a:hover{width:100%!important;color:#2a2a2a!important;background:#e6e6e6}.vertical-menu #sidebar-menu>ul>li:hover>a i{color:#fff!important}", ""]);
+
+// exports
 
 
 /***/ }),
@@ -3953,7 +3985,7 @@ module.exports = function (iterator, kind, value) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _BaseSideBar_vue_vue_type_template_id_3594e71e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ed82");
+/* harmony import */ var _BaseSideBar_vue_vue_type_template_id_b8c202e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("bfb5");
 /* harmony import */ var _BaseSideBar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("c6a1");
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _BaseSideBar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _BaseSideBar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("2877");
@@ -3966,8 +3998,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(
   _BaseSideBar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _BaseSideBar_vue_vue_type_template_id_3594e71e___WEBPACK_IMPORTED_MODULE_0__[/* render */ "a"],
-  _BaseSideBar_vue_vue_type_template_id_3594e71e___WEBPACK_IMPORTED_MODULE_0__[/* staticRenderFns */ "b"],
+  _BaseSideBar_vue_vue_type_template_id_b8c202e2___WEBPACK_IMPORTED_MODULE_0__[/* render */ "a"],
+  _BaseSideBar_vue_vue_type_template_id_b8c202e2___WEBPACK_IMPORTED_MODULE_0__[/* staticRenderFns */ "b"],
   false,
   null,
   null,
@@ -9237,6 +9269,23 @@ module.exports = $documentAll.IS_HTMLDDA ? function (it) {
 
 /***/ }),
 
+/***/ "bfb5":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b5a242f0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./build-utils/global-vue-loader.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSideBar/BaseSideBar.vue?vue&type=template&id=b8c202e2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vertical-menu",on:{"click":_vm.show,"mouseleave":_vm.showSideBar,"mouseover":_vm.hideSideBar}},[(!_vm.isCondensed)?_c('simplebar',{ref:"currentMenu",staticClass:"h-100",attrs:{"id":"my-element","settings":_vm.settings}},[_c('SideNav',{attrs:{"menu-items":_vm.menuItems}})],1):_c('simplebar',{staticClass:"h-100"},[_c('SideNav',{attrs:{"menu-items":_vm.menuItems}})],1)],1)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/BaseSideBar/BaseSideBar.vue?vue&type=template&id=b8c202e2&
+/* concated harmony reexport render */__webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* concated harmony reexport staticRenderFns */__webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+
+
+/***/ }),
+
 /***/ "c068":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10651,23 +10700,6 @@ addToUnscopables('entries');
 if (!IS_PURE && DESCRIPTORS && values.name !== 'values') try {
   defineProperty(values, 'name', { value: 'values' });
 } catch (error) { /* empty */ }
-
-
-/***/ }),
-
-/***/ "ed82":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b5a242f0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./build-utils/global-vue-loader.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseSideBar/BaseSideBar.vue?vue&type=template&id=3594e71e&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vertical-menu",on:{"click":_vm.show,"mouseleave":_vm.showSideBar,"mouseover":_vm.hideSideBar}},[(!_vm.isCondensed)?_c('simplebar',{ref:"currentMenu",staticClass:"h-100",attrs:{"id":"my-element","settings":_vm.settings}},[_c('SideNav',{attrs:{"menu-items":_vm.menuItems}})],1):_c('simplebar',{staticClass:"h-100"},[_c('SideNav',{attrs:{"menu-items":_vm.menuItems}})],1)],1)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/BaseSideBar/BaseSideBar.vue?vue&type=template&id=3594e71e&
-/* concated harmony reexport render */__webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* concated harmony reexport staticRenderFns */__webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
 
 
 /***/ }),
